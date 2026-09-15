@@ -31,7 +31,7 @@ A versão de produção é gerada em `dist/`.
 - Contato pelo GitHub: https://github.com/cwcasado.
 - Menu que funciona também em telas estreitas.
 - HTML semântico com header, nav, main, section, article e footer.
-- Dois tipos de mídia locais: imagem SVG (`public/workspace.svg`) e áudio WAV (`public/pausa.wav`). Ambos foram criados para este portfólio; o áudio é uma sequência instrumental sintetizada de seis segundos, sem voz.
+- Foto pessoal enviada por Carlos Wagner (`public/perfil-carlos.jpg`), incluída com sua autorização. Segundo tipo de mídia: trilha instrumental original Neon Afterhours (`public/neon-afterhours.wav`), com aproximadamente 35 segundos, sintetizada sem samples externos. O player possui controles e não inicia automaticamente. O gerador está em `scripts/generate_music.py` (Python + NumPy; opcional, não necessário para executar o site).
 - Animação CSS no indicador do início, respeitando a preferência por movimento reduzido.
 
 ## Estrutura
@@ -52,6 +52,10 @@ A versão de produção é gerada em `dist/`.
 2. Confira se o repositório está acessível à professora e contém pelo menos três commits com mensagens claras.
 3. Envie `portfolio-carlos-wagner.zip` na atividade do AVA, sem `node_modules`.
 4. Cole também o link do repositório no campo ou comentário da atividade. Os dois são obrigatórios.
-5. Antes de enviar, teste o site, os links e o áudio.
+5. Antes de enviar, teste o site e os links.
 
 O ZIP não inclui `node_modules`, `.git` ou `dist`. Instale as dependências após extrair.
+
+
+
+
