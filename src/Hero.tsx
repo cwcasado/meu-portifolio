@@ -32,15 +32,21 @@ export default function Hero() {
           <span>2026</span>
         </div>
         <div className="portrait-frame">
-          <img
-            src={`${import.meta.env.BASE_URL}perfil-carlos.jpg`}
+          <picture>
+            <source
+              srcSet={`${import.meta.env.BASE_URL}perfil-carlos.webp`}
+              type="image/webp"
+            />
+            <img
+              src={`${import.meta.env.BASE_URL}perfil-carlos.jpg`}
             alt="Retrato de Carlos Wagner em preto e branco"
             width="460"
             height="460"
             loading="eager"
             decoding="async"
             fetchPriority="high"
-          />
+            />
+          </picture>
           <span className="portrait-cross" aria-hidden="true">
             +
           </span>
