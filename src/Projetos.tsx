@@ -1,4 +1,4 @@
-import { projects } from './data/projects'
+import { projects, skillGroups } from './data/projects'
 
 export default function Projetos() {
   return (
@@ -39,6 +39,25 @@ export default function Projetos() {
           </article>
         ))}
       </div>
+      <aside className="skills" aria-label="Habilidades">
+        <div className="skills-heading">
+          <p className="eyebrow">HABILIDADES // DO GITHUB</p>
+          <h3>O que uso nos meus estudos</h3>
+          <p>Levantado a partir dos meus repositórios públicos.</p>
+        </div>
+        <div className="skills-groups">
+          {skillGroups.map((group) => (
+            <div className="skills-group" key={group.label}>
+              <p className="eyebrow">{group.label}</p>
+              <ul>
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </aside>
       <aside className="soundtrack" aria-label="Trilha sonora">
         <div>
           <p className="eyebrow">SOUNDTRACK // 01</p>

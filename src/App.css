@@ -46,6 +46,8 @@ h2 em { font-style: normal; color: var(--pink); }
 .map { color: var(--cyan); background-image: linear-gradient(#54f7ed08 1px, transparent 1px), linear-gradient(90deg, #54f7ed08 1px, transparent 1px); background-color: #101d24; }
 .python { color: var(--pink); background-image: linear-gradient(135deg, #ff54be07 25%, transparent 25%, transparent 50%, #ff54be07 50%, #ff54be07 75%, transparent 75%); background-color: #211125; }
 .cpp { color: #c2b0ff; background-image: radial-gradient(#c2b0ff33 1px, transparent 1px); background-color: #171329; }
+.react { color: #6fc3ff; background-image: linear-gradient(#6fc3ff10 1px, transparent 1px), linear-gradient(90deg, #6fc3ff10 1px, transparent 1px); background-color: #0f1c2b; }
+.legacy { color: #ffc857; background-image: repeating-linear-gradient(45deg, #ffc8570d 0 8px, transparent 8px 16px); background-color: #231a0c; }
 .card-copy { padding: 25px 23px; }
 .card .eyebrow { font-size: 9px; letter-spacing: 1px; }
 .card h3 { font-size: 21px; line-height: 1.25; margin: 13px 0; }
@@ -93,3 +95,11 @@ footer { padding: 25px 36px; border-top: 1px solid var(--border); display: flex;
 .soundtrack audio { width: 310px; max-width: 100%; }
 .soundtrack audio:focus-visible { outline: 3px solid var(--cyan); outline-offset: 5px; }
 @media (max-width: 760px) { .soundtrack { flex-direction: column; align-items: stretch; padding: 22px; } .soundtrack audio { width: 100%; } }
+.skills { margin-top: 28px; padding: 26px; border: 1px solid var(--border); border-left: 3px solid var(--cyan); background: #101018; }
+.skills-heading h3 { margin: 8px 0; font-size: 22px; }
+.skills-heading > p:not(.eyebrow) { color: var(--muted); font-size: 13px; }
+.skills-groups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 20px; }
+.skills-group .eyebrow { font-size: 9px; letter-spacing: 1px; margin-bottom: 10px; }
+.skills-group ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.skills-group li { border: 1px solid var(--border); background: #13131e; padding: 7px 10px; font: 11px var(--mono); color: #c1c1d2; }
+@media (max-width: 760px) { .skills { padding: 22px; } .skills-groups { grid-template-columns: 1fr; } }

@@ -27,7 +27,8 @@ A versão de produção é gerada em `dist/`.
 
 - Início com nome, apresentação e link para os projetos.
 - Sobre com trajetória e objetivo de aprendizado.
-- Três cards com projetos públicos reais: ordenação, recursividade e matrizes.
+- Seis cards com projetos públicos reais: ordenação, recursividade, matrizes, portfólio em React+Vite, migração de sistemas (Java/C/COBOL→Python) e o código-fonte deste site.
+- Bloco de habilidades levantado a partir das linguagens dos repositórios públicos.
 - Contato pelo GitHub: https://github.com/cwcasado.
 - Menu que funciona também em telas estreitas.
 - HTML semântico com header, nav, main, section, article e footer.

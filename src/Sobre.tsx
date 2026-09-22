@@ -16,8 +16,8 @@ export default function Sobre() {
           colocando em prática o que aprendo a cada novo projeto.
         </p>
         <p>
-          No meu GitHub, compartilho exercícios de algoritmos em Python e
-          estudos de desenvolvimento web. Entre matrizes, recursividade e
+          No meu GitHub, compartilho mais de 10 repositórios públicos: exercícios de algoritmos em Python,
+          estudos de desenvolvimento web e até migração de sistemas legados. Entre matrizes, recursividade e
           interfaces com React, estou construindo minha trajetória na
           tecnologia.
         </p>
