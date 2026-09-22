@@ -1,50 +1,111 @@
-# Portfólio — Carlos Wagner de Souza Venceslao
+# Portfólio — Trabalho P1 de Laboratório de Programação Front End
 
 [![CI](https://github.com/cwcasado/meu-portifolio/actions/workflows/ci.yml/badge.svg)](https://github.com/cwcasado/meu-portifolio/actions/workflows/ci.yml)
 [![Deploy](https://github.com/cwcasado/meu-portifolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/cwcasado/meu-portifolio/actions/workflows/deploy.yml)
 
 🌐 **Site no ar:** https://cwcasado.github.io/meu-portifolio/
 
-Portfólio pessoal para o trabalho P1 de Laboratório de Programação Front End, Engenharia de Software, Universidade de Vassouras — Campus Saquarema, 2026.2.
+## 1. Identificação acadêmica
 
-## Executar
+| Item | Descrição |
+|------|-----------|
+| Instituição | Universidade de Vassouras — Campus Saquarema |
+| Curso | Engenharia de Software |
+| Disciplina | Laboratório de Programação Front End |
+| Trabalho | P1 — Portfólio pessoal (landing page) |
+| Semestre | 2026.2 |
+| Aluno | Carlos Wagner de Souza Venceslao |
+| Professor(a) | *(a preencher)* |
+| Repositório | https://github.com/cwcasado/meu-portifolio |
+| Site publicado | https://cwcasado.github.io/meu-portifolio/ |
+
+## 2. Resumo
+
+Landing page de portfólio pessoal desenvolvida com React, TypeScript e Vite. A página apresenta o aluno, seis projetos reais hospedados no GitHub, um bloco de habilidades, seção de contato e dois tipos de mídia local (foto e trilha sonora autoral). O projeto segue HTML semântico, layout responsivo com menu mobile acessível e pipeline de CI/CD com publicação automática no GitHub Pages.
+
+Documentação complementar em [`docs/`](docs/): relatório técnico ([`RELATORIO-P1.md`](docs/RELATORIO-P1.md)) e checklist de requisitos ([`REQUISITOS.md`](docs/REQUISITOS.md)).
+
+## 3. Objetivos
+
+- **Geral:** construir um portfólio web funcional que apresente a trajetória e os projetos do aluno.
+- **Específicos:**
+  1. Aplicar componentização com React e tipagem estrita com TypeScript.
+  2. Garantir responsividade (desktop e telas estreitas) e acessibilidade básica (WCAG AA como referência).
+  3. Publicar o site com deploy automatizado e versionar o código com commits claros.
+
+## 4. Requisitos da atividade e atendimento
+
+| Requisito (enunciado no AVA) | Atendimento | Evidência |
+|---|---|---|
+| Página inicial com apresentação | ✅ | `src/Hero.tsx` — nome, descrição, link para projetos |
+| Seção sobre | ✅ | `src/Sobre.tsx` — trajetória e objetivo |
+| Pelo menos 3 projetos reais | ✅ (6 projetos) | `src/data/projects.ts` + `src/Projetos.tsx` |
+| Contato pelo GitHub | ✅ | `src/Contato.tsx` → https://github.com/cwcasado |
+| Menu funcional em telas estreitas | ✅ | `src/Header.tsx` — botão hamburger com `aria-expanded`, fecha com Escape |
+| HTML semântico | ✅ | `header`, `nav`, `main`, `section`, `article`, `aside`, `footer` |
+| Foto pessoal + 2º tipo de mídia | ✅ | `public/perfil-carlos.jpg` (+ WebP) e trilha `Neon Afterhours` (MP3 servido, WAV como fallback) |
+| Animação CSS | ✅ | Indicador pulsante no início, com `prefers-reduced-motion` |
+| Repositório acessível + ≥ 3 commits | ✅ | 8+ commits com mensagens claras |
+| ZIP sem `node_modules` + link do repo no AVA | ✅ | `portfolio-carlos-wagner.zip` (ver § 8) |
+
+Detalhamento item a item em [`docs/REQUISITOS.md`](docs/REQUISITOS.md).
+
+## 5. Tecnologias
+
+| Camada | Tecnologia |
+|---|---|
+| Interface | React 19 + TypeScript (strict) |
+| Build | Vite 8 |
+| Estilos | CSS puro (design tokens em `:root`, mobile-first) |
+| Qualidade | ESLint + `tsc -b` |
+| CI/CD | GitHub Actions (`ci.yml` + `deploy.yml`) → GitHub Pages |
+| Mídia | Foto otimizada (WebP/JPG via Pillow); áudio MP3/WAV via FFmpeg |
+
+Sem API, banco de dados ou Docker — site 100% estático.
+
+## 6. Estrutura do projeto
+
+```text
+├── index.html              # SEO (Open Graph, theme-color, description)
+├── public/                 # foto, trilha sonora, favicon
+├── scripts/                # generate_music.py (gera a trilha; opcional)
+├── src/
+│   ├── App.tsx             # composição + skip link
+│   ├── Header.tsx          # marca + menu mobile acessível
+│   ├── Hero.tsx            # apresentação + foto (WebP com fallback)
+│   ├── Sobre.tsx           # biografia
+│   ├── Projetos.tsx        # 6 cards + bloco de habilidades + player
+│   ├── Contato.tsx         # chamada para o GitHub
+│   ├── Footer.tsx          # rodapé
+│   ├── data/projects.ts    # dados dos projetos e habilidades
+│   ├── App.css / index.css # estilos e responsividade
+├── docs/                   # relatório técnico e checklist de requisitos
+└── .github/workflows/      # CI (lint+build) e Deploy (Pages)
+```
+
+Arquivos por componente em "Personalizar" (abaixo) indicam onde editar cada seção.
+
+## 7. Como executar e validar
 
 Pré-requisito: Node.js 22.12+ (ou 24) e npm.
 
 ```sh
 npm install
-npm run dev
+npm run dev      # ambiente local
+npm run lint     # ESLint — 0 erros
+npm run build    # tsc + build de produção em dist/
+npm run preview  # serve a versão de produção
 ```
 
-Abra o endereço indicado pelo Vite no terminal.
+## 8. Resultados
 
-## Validar e compilar
+- **Lighthouse (desktop):** Performance 100 · Acessibilidade 100 · Boas práticas 100 · SEO 100.
+- **Otimização de mídia:** foto 890 KB → 125 KB (JPG 920×920) → 83 KB (WebP servido, JPG como fallback); áudio WAV 1.503 KB → MP3 547 KB com `preload="none"`.
+- **Bundle:** JS ~230 KB (~72 KB gzip) · CSS ~9 KB — baseline do React via Vite.
 
-```sh
-npm run lint
-npm run build
-npm run preview
-```
+Metodologia e decisões técnicas em [`docs/RELATORIO-P1.md`](docs/RELATORIO-P1.md).
 
-A versão de produção é gerada em `dist/`.
-
-## Conteúdo
-
-- Início com nome, apresentação e link para os projetos.
-- Sobre com trajetória e objetivo de aprendizado.
-- Seis cards com projetos públicos reais: ordenação, recursividade, matrizes, portfólio em React+Vite, migração de sistemas (Java/C/COBOL→Python) e o código-fonte deste site.
-- Bloco de habilidades levantado a partir das linguagens dos repositórios públicos.
-- Contato pelo GitHub: https://github.com/cwcasado.
-- Menu que funciona também em telas estreitas.
-- HTML semântico com header, nav, main, section, article e footer.
-- Foto pessoal enviada por Carlos Wagner (`public/perfil-carlos.jpg`, 920×920, otimizada para web), incluída com sua autorização. Segundo tipo de mídia: trilha instrumental original Neon Afterhours (`public/neon-afterhours.wav`, ~35 segundos, sintetizada sem samples externos; `public/neon-afterhours.mp3` é a versão otimizada servida no site, com o WAV como fallback). O player possui controles e não inicia automaticamente. O gerador está em `scripts/generate_music.py` (Python + NumPy; opcional, não necessário para executar o site).
-- Animação CSS no indicador do início, respeitando a preferência por movimento reduzido.
-
-## Estrutura
-
-`src/` contém os componentes React e estilos. `public/` contém mídias e favicon. O projeto usa Vite, React e TypeScript, sem API, banco ou Docker.
-
-## Personalizar
+## 9. Personalizar
 
 - `src/Hero.tsx`: nome e apresentação.
 - `src/Sobre.tsx`: biografia.
@@ -55,7 +116,7 @@ A versão de produção é gerada em `dist/`.
 - `src/Header.tsx`: marca + menu mobile acessível (botão com `aria-expanded`, fecha com Escape).
 - `src/App.css` e `src/index.css`: aparência e responsividade.
 
-## Entrega no AVA — até 15/09/2026
+## 10. Entrega no AVA — até 15/09/2026
 
 1. Publique a versão final neste repositório: https://github.com/cwcasado/meu-portifolio.
 2. Confira se o repositório está acessível à professora e contém pelo menos três commits com mensagens claras.
@@ -65,6 +126,14 @@ A versão de produção é gerada em `dist/`.
 
 O ZIP não inclui `node_modules`, `.git` ou `dist`. Instale as dependências após extrair.
 
+## 11. Referências
 
+- Documentação do React — https://react.dev
+- Documentação do Vite — https://vite.dev
+- MDN Web Docs (HTML, CSS, ARIA) — https://developer.mozilla.org
+- WCAG 2.1 (W3C) — https://www.w3.org/TR/WCAG21/
+- Web.dev / Lighthouse — https://developer.chrome.com/docs/lighthouse
 
+## 12. Autoria
 
+Trabalho individual de Carlos Wagner de Souza Venceslao para a disciplina Laboratório de Programação Front End (2026.2). A foto é pessoal (uso autorizado pelo próprio autor) e a trilha `Neon Afterhours` é composição original sintetizada via `scripts/generate_music.py`, sem samples externos.
