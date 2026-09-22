@@ -33,7 +33,7 @@ export default function Hero() {
         </div>
         <div className="portrait-frame">
           <img
-            src="/perfil-carlos.jpg"
+            src={`${import.meta.env.BASE_URL}perfil-carlos.jpg`}
             alt="Retrato de Carlos Wagner em preto e branco"
             width="460"
             height="460"

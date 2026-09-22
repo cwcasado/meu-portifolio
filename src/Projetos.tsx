@@ -69,10 +69,10 @@ export default function Projetos() {
           preload="none"
           aria-label="Reproduzir Neon Afterhours, trilha instrumental"
         >
-          <source src="/neon-afterhours.mp3" type="audio/mpeg" />
-          <source src="/neon-afterhours.wav" type="audio/wav" />
+          <source src={`${import.meta.env.BASE_URL}neon-afterhours.mp3`} type="audio/mpeg" />
+          <source src={`${import.meta.env.BASE_URL}neon-afterhours.wav`} type="audio/wav" />
           Seu navegador não suporta áudio.{' '}
-          <a href="/neon-afterhours.mp3">Baixar música</a>
+          <a href={`${import.meta.env.BASE_URL}neon-afterhours.mp3`}>Baixar música</a>
         </audio>
       </aside>
     </section>
