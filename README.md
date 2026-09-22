@@ -1,5 +1,10 @@
 # Portfólio — Carlos Wagner de Souza Venceslao
 
+[![CI](https://github.com/cwcasado/meu-portifolio/actions/workflows/ci.yml/badge.svg)](https://github.com/cwcasado/meu-portifolio/actions/workflows/ci.yml)
+[![Deploy](https://github.com/cwcasado/meu-portifolio/actions/workflows/deploy.yml/badge.svg)](https://github.com/cwcasado/meu-portifolio/actions/workflows/deploy.yml)
+
+🌐 **Site no ar:** https://cwcasado.github.io/meu-portifolio/
+
 Portfólio pessoal para o trabalho P1 de Laboratório de Programação Front End, Engenharia de Software, Universidade de Vassouras — Campus Saquarema, 2026.2.
 
 ## Executar
