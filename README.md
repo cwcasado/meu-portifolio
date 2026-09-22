@@ -116,13 +116,13 @@ Metodologia e decisões técnicas em [`docs/RELATORIO-P1.md`](docs/RELATORIO-P1.
 - `src/Header.tsx`: marca + menu mobile acessível (botão com `aria-expanded`, fecha com Escape).
 - `src/App.css` e `src/index.css`: aparência e responsividade.
 
-## 10. Entrega no AVA — até 15/09/2026
+## 10. Entrega no AVA — realizada ✅
 
-1. Publique a versão final neste repositório: https://github.com/cwcasado/meu-portifolio.
-2. Confira se o repositório está acessível à professora e contém pelo menos três commits com mensagens claras.
-3. Envie `portfolio-carlos-wagner.zip` na atividade do AVA, sem `node_modules`.
-4. Cole também o link do repositório no campo ou comentário da atividade. Os dois são obrigatórios.
-5. Antes de enviar, teste o site e os links.
+1. ✅ Versão final publicada neste repositório: https://github.com/cwcasado/meu-portifolio.
+2. ✅ Repositório acessível à professora, com commits de mensagens claras (8+).
+3. ✅ `portfolio-carlos-wagner.zip` enviado na atividade do AVA, sem `node_modules`.
+4. ✅ Link do repositório colado no campo/comentário da atividade.
+5. ✅ Site e links testados (Lighthouse 100/100/100/100 no desktop).
 
 O ZIP não inclui `node_modules`, `.git` ou `dist`. Instale as dependências após extrair.
 
