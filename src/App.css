@@ -4,6 +4,9 @@
 .brand span { color: var(--cyan); text-shadow: 0 0 18px #54f7ed88; }
 .header nav { display: flex; gap: 32px; font: 12px var(--mono); }
 .header nav a:hover, footer a:hover { color: var(--cyan); }
+.menu-toggle { display: none; background: transparent; border: 1px solid var(--border); color: var(--cyan); font: 20px var(--mono); padding: 8px 12px; cursor: pointer; }
+.menu-toggle:hover { border-color: var(--cyan); }
+.menu-toggle:focus-visible { outline: 3px solid var(--pink); outline-offset: 4px; }
 .hero { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 55px; padding: 80px 36px 90px; }
 .eyebrow { font: 700 11px/1.6 var(--mono); letter-spacing: 1.6px; display: flex; align-items: center; gap: 9px; color: var(--cyan); }
 .status { width: 7px; height: 7px; background: var(--cyan); animation: pulse 2.5s ease-in-out infinite; }
@@ -60,8 +63,12 @@ footer { padding: 25px 36px; border-top: 1px solid var(--border); display: flex;
 .skip-link:focus { top: 10px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 @media (max-width: 760px) {
-  .header { padding: 20px 22px; }
-  .header nav { gap: 16px; font-size: 11px; }
+  .header { padding: 20px 22px; position: relative; }
+  .menu-toggle { display: block; }
+  .header nav { display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 20; flex-direction: column; gap: 0; background: #12121e; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .header nav[data-open="true"] { display: flex; }
+  .header nav a { padding: 16px 22px; border-top: 1px solid var(--border); }
+  .header nav a:hover { background: #1c1c2d; }
   .hero { grid-template-columns: 1fr; padding: 48px 24px; gap: 38px; }
   h1 { letter-spacing: -2px; }
   .hero-art { max-width: 470px; width: 100%; justify-self: center; }
@@ -76,7 +83,6 @@ footer { padding: 25px 36px; border-top: 1px solid var(--border); display: flex;
   footer { padding: 24px; gap: 15px; line-height: 1.6; }
 }
 @media (max-width: 360px) {
-  .header nav { gap: 10px; font-size: 10px; }
   h1 { font-size: 42px; }
   .hero-art figcaption { letter-spacing: 0; }
 }

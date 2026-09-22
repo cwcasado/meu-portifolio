@@ -31,7 +31,7 @@ A versão de produção é gerada em `dist/`.
 - Contato pelo GitHub: https://github.com/cwcasado.
 - Menu que funciona também em telas estreitas.
 - HTML semântico com header, nav, main, section, article e footer.
-- Foto pessoal enviada por Carlos Wagner (`public/perfil-carlos.jpg`), incluída com sua autorização. Segundo tipo de mídia: trilha instrumental original Neon Afterhours (`public/neon-afterhours.wav`), com aproximadamente 35 segundos, sintetizada sem samples externos. O player possui controles e não inicia automaticamente. O gerador está em `scripts/generate_music.py` (Python + NumPy; opcional, não necessário para executar o site).
+- Foto pessoal enviada por Carlos Wagner (`public/perfil-carlos.jpg`, 920×920, otimizada para web), incluída com sua autorização. Segundo tipo de mídia: trilha instrumental original Neon Afterhours (`public/neon-afterhours.wav`, ~35 segundos, sintetizada sem samples externos; `public/neon-afterhours.mp3` é a versão otimizada servida no site, com o WAV como fallback). O player possui controles e não inicia automaticamente. O gerador está em `scripts/generate_music.py` (Python + NumPy; opcional, não necessário para executar o site).
 - Animação CSS no indicador do início, respeitando a preferência por movimento reduzido.
 
 ## Estrutura
@@ -43,7 +43,10 @@ A versão de produção é gerada em `dist/`.
 - `src/Hero.tsx`: nome e apresentação.
 - `src/Sobre.tsx`: biografia.
 - `src/Projetos.tsx`: cards e links.
-- `src/contato.tsx`: contato.
+- `src/Contato.tsx`: contato.
+- `src/data/projects.ts`: dados dos projetos e URL do GitHub.
+- `src/Footer.tsx`: rodapé.
+- `src/Header.tsx`: marca + menu mobile acessível (botão com `aria-expanded`, fecha com Escape).
 - `src/App.css` e `src/index.css`: aparência e responsividade.
 
 ## Entrega no AVA — até 15/09/2026

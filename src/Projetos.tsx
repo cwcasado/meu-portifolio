@@ -1,11 +1,61 @@
-const projects = [
-  { number: '01', url: 'https://github.com/cwcasado/Algoritmos_sort', tag: 'ALGORITMOS', title: 'Algoritmos de ordenação', description: 'Trabalho de apresentação de nove algoritmos de ordenação. Um estudo em Python sobre diferentes formas de organizar dados.', tech: 'Python · Ordenação', symbol: '◎', style: 'map' },
-  { number: '02', url: 'https://github.com/cwcasado/algoritmos-segundo-per-odo-lista-4', tag: 'LÓGICA & PRÁTICA', title: 'Funções recursivas', description: 'Exercícios de funções recursivas em Python. Explorando a resolução de problemas a partir de versões menores do mesmo problema.', tech: 'Python · Recursividade', symbol: '>_', style: 'python' },
-  { number: '03', url: 'https://github.com/cwcasado/Exerc-cio-algoritmo', tag: 'FUNDAMENTOS', title: 'Explorando matrizes', description: 'Exercícios em Python para aprender sobre matrizes. Praticando a organização de dados e desenvolvendo o raciocínio lógico.', tech: 'Python · Matrizes', symbol: '{ }', style: 'cpp' },
-]
+import { projects } from './data/projects'
+
 export default function Projetos() {
-  return <section id="projetos" className="section projects"><div className="section-heading"><div><p className="eyebrow">02 — PROJETOS & HABILIDADES</p><h2>Da teoria à prática.</h2></div><p>Um pouco do que estou<br />estudando e desenvolvendo.</p></div><div className="cards-container">{projects.map(project => <article className="card" key={project.number}><div className={`card-art ${project.style}`} aria-hidden="true"><span>{project.symbol}</span><small>{project.number}</small></div><div className="card-copy"><p className="eyebrow">{project.tag}</p><h3>{project.title}</h3><p>{project.description}</p><div className="card-tech">{project.tech}</div><a className="project-link" href={project.url} target="_blank" rel="noreferrer">Ver repositório ↗<span className="sr-only">: {project.title}</span></a></div></article>)}</div><aside className="soundtrack" aria-label="Trilha sonora"><div><p className="eyebrow">SOUNDTRACK // 01</p><h3>Neon Afterhours</h3><p>Sintetizadores, pulsos noturnos e um futuro em neon.</p></div><audio controls preload="metadata" aria-label="Reproduzir Neon Afterhours, trilha instrumental cyberpunk"><source src="/neon-afterhours.wav" type="audio/wav" />Seu navegador não suporta áudio. <a href="/neon-afterhours.wav">Baixar música</a></audio></aside></section>
+  return (
+    <section id="projetos" className="section projects" aria-labelledby="titulo-projetos">
+      <div className="section-heading">
+        <div>
+          <p className="eyebrow">02 — PROJETOS &amp; HABILIDADES</p>
+          <h2 id="titulo-projetos">Da teoria à prática.</h2>
+        </div>
+        <p>
+          Um pouco do que estou
+          <br />
+          estudando e desenvolvendo.
+        </p>
+      </div>
+      <div className="cards-container">
+        {projects.map((project) => (
+          <article className="card" key={project.number}>
+            <div className={`card-art ${project.style}`} aria-hidden="true">
+              <span>{project.symbol}</span>
+              <small>{project.number}</small>
+            </div>
+            <div className="card-copy">
+              <p className="eyebrow">{project.tag}</p>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <div className="card-tech">{project.tech}</div>
+              <a
+                className="project-link"
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver repositório <span aria-hidden="true">↗</span>
+                <span className="sr-only">: {project.title} (abre em nova aba)</span>
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+      <aside className="soundtrack" aria-label="Trilha sonora">
+        <div>
+          <p className="eyebrow">SOUNDTRACK // 01</p>
+          <h3>Neon Afterhours</h3>
+          <p>Sintetizadores, pulsos noturnos e um futuro em neon.</p>
+        </div>
+        <audio
+          controls
+          preload="none"
+          aria-label="Reproduzir Neon Afterhours, trilha instrumental"
+        >
+          <source src="/neon-afterhours.mp3" type="audio/mpeg" />
+          <source src="/neon-afterhours.wav" type="audio/wav" />
+          Seu navegador não suporta áudio.{' '}
+          <a href="/neon-afterhours.mp3">Baixar música</a>
+        </audio>
+      </aside>
+    </section>
+  )
 }
-
-
-

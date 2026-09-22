@@ -1,3 +1,36 @@
 export default function Sobre() {
-  return <section id="sobre" className="about section"><div><p className="eyebrow">01 — SOBRE MIM</p><h2>Aprender, construir.<br /><em>Evoluir sempre.</em></h2></div><div className="about-copy"><p>Sou Carlos Wagner de Souza Venceslao, estudante de Engenharia de Software. Busco alcançar minhas metas através do conhecimento, colocando em prática o que aprendo a cada novo projeto.</p><p>No meu GitHub, compartilho exercícios de algoritmos em Python e estudos de desenvolvimento web. Entre matrizes, recursividade e interfaces com React, estou construindo minha trajetória na tecnologia.</p><div className="about-note"><span>↗</span><p><strong>Meu próximo passo</strong><br />Aprofundar meus estudos e construir experiências úteis para as pessoas.</p></div></div></section>
+  return (
+    <section id="sobre" className="about section" aria-labelledby="titulo-sobre">
+      <div>
+        <p className="eyebrow">01 — SOBRE MIM</p>
+        <h2 id="titulo-sobre">
+          Aprender, construir.
+          <br />
+          <em>Evoluir sempre.</em>
+        </h2>
+      </div>
+      <div className="about-copy">
+        <p>
+          Sou Carlos Wagner de Souza Venceslao, estudante de Engenharia de
+          Software. Busco alcançar minhas metas através do conhecimento,
+          colocando em prática o que aprendo a cada novo projeto.
+        </p>
+        <p>
+          No meu GitHub, compartilho exercícios de algoritmos em Python e
+          estudos de desenvolvimento web. Entre matrizes, recursividade e
+          interfaces com React, estou construindo minha trajetória na
+          tecnologia.
+        </p>
+        <div className="about-note">
+          <span aria-hidden="true">↗</span>
+          <p>
+            <strong>Meu próximo passo</strong>
+            <br />
+            Aprofundar meus estudos e construir experiências úteis para as
+            pessoas.
+          </p>
+        </div>
+      </div>
+    </section>
+  )
 }
